@@ -126,12 +126,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 387734428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &198055796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3594691786493905543, guid: 6e4e98bf9cfdd26488e763a758f39198,
+    type: 3}
+  m_PrefabInstance: {fileID: 387734428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &198055802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3594691786493905548, guid: 6e4e98bf9cfdd26488e763a758f39198,
     type: 3}
   m_PrefabInstance: {fileID: 387734428}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &198055803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198055796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.113222, y: 1.0787395, z: 3.56384}
+  m_Center: {x: 0.09603596, y: -0.46063027, z: -0.19012308}
 --- !u!1 &240981395
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,11 +310,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3594691786493905538, guid: 6e4e98bf9cfdd26488e763a758f39198,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a825246d84760da42809b31044234c87, type: 2}
     - target: {fileID: 7841845119111406539, guid: 6e4e98bf9cfdd26488e763a758f39198,
         type: 3}
       propertyPath: Speed
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7841845119111406539, guid: 6e4e98bf9cfdd26488e763a758f39198,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 919321000}
     - target: {fileID: 409455300392347322, guid: 6e4e98bf9cfdd26488e763a758f39198,
         type: 3}
       propertyPath: Target
@@ -308,6 +337,12 @@ PrefabInstance:
       objectReference: {fileID: 198055802}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4e98bf9cfdd26488e763a758f39198, type: 3}
+--- !u!1 &919321000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3594691785770418362, guid: 6e4e98bf9cfdd26488e763a758f39198,
+    type: 3}
+  m_PrefabInstance: {fileID: 387734428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055435964
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +434,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1171039806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5110461198970166838, guid: 9cf171e1105749246b3fb326680ec7e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5110461199450724421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1943624064
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123961061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.87, z: 0}
   m_LocalScale: {x: 183.68054, y: -0.016100174, z: 183.68054}
   m_Children: []
   m_Father: {fileID: 0}
@@ -589,7 +630,12 @@ PrefabInstance:
     - target: {fileID: 6944500843672113525, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944500843672113525, guid: 9cf171e1105749246b3fb326680ec7e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 6944500843672113527, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
@@ -644,6 +690,15 @@ PrefabInstance:
     - target: {fileID: 6944500843672113527, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389161158, guid: 9cf171e1105749246b3fb326680ec7e1, type: 3}
+      propertyPath: carCamera
+      value: 
+      objectReference: {fileID: 1171039806}
+    - target: {fileID: 5110461198977070210, guid: 9cf171e1105749246b3fb326680ec7e1,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
