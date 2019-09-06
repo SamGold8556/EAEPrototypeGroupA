@@ -46,7 +46,8 @@ public class ThirdPersonCharacterControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Enter Car");
-                gameObject.SetActive(false);
+                GameManager.instance.EnterCar();
+                //gameObject.SetActive(false);
                 //EnterCar(other.gameObject.GetComponent<SimpleCarController>());
             }
         }
