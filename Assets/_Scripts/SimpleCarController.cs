@@ -11,7 +11,7 @@ public class SimpleCarController : MonoBehaviour
     public GameObject carCamera; // controls the camera attached to the car
     public bool isCarActive; // determines whether or not player is inside car
     private SimpleCarController activePlayer;
-
+    public GameObject centerOfMass;
 
 
 
@@ -19,6 +19,8 @@ public class SimpleCarController : MonoBehaviour
     {
         isCarActive = false;
         activePlayer = FindObjectOfType<SimpleCarController>();
+        GetComponent<Rigidbody>().centerOfMass = centerOfMass.gameObject.transform.localPosition;
+
     }
 
     public void FixedUpdate()
