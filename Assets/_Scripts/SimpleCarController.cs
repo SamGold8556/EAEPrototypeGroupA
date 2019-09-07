@@ -54,7 +54,7 @@ public class SimpleCarController : MonoBehaviour
             {
                 // var player = FindObjectOfType<ThirdPersonCharacterControl>();
                 // player.transform.position = transform.position;
-                activePlayer.transform.position = new Vector3(transform.position.x, 0, transform.position.y + 10);
+                //activePlayer.transform.position = new Vector3(transform.position.x, 0, transform.position.y + 10);
                 GameManager.instance.ExitCar();
             }
         }
