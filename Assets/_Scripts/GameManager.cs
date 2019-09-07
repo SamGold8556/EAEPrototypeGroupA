@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public void EnterCar()
     {
+        Debug.Log("Enter Car Triggered");
+        Vehicle.gameObject.GetComponent<SimpleCarController>().isCarActive = true;
+        Player.gameObject.GetComponent<ThirdPersonCharacterControl>().inCar = true;
         Player.SetActive(false);
         Vehicle.GetComponent<SimpleCarController>().carCamera.SetActive(true);
         Vehicle.GetComponent<SimpleCarController>().isCarActive = true;
@@ -25,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     public void ExitCar()
     {
+        Debug.Log("CarExit Triggered");
+        Vehicle.gameObject.GetComponent<SimpleCarController>().isCarActive = false;
+        Player.gameObject.GetComponent<ThirdPersonCharacterControl>().inCar = false;
         Player.SetActive(true);
         Vehicle.GetComponent<SimpleCarController>().carCamera.SetActive(true);
         Vehicle.GetComponent<SimpleCarController>().isCarActive = false;
@@ -33,6 +39,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

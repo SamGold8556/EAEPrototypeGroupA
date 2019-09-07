@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SimpleCarController : MonoBehaviour
-{  
+{
 
-public List<AxleInfo> axleInfos; // the information about each individual axle
-public float maxMotorTorque; // maximum torque the motor can apply to wheel
-public float maxSteeringAngle; // maximum steer angle the wheel can have
-public GameObject carCamera; // controls the camera attached to the car
-public bool isCarActive; // determines whether or not player is inside car
+    public List<AxleInfo> axleInfos; // the information about each individual axle
+    public float maxMotorTorque; // maximum torque the motor can apply to wheel
+    public float maxSteeringAngle; // maximum steer angle the wheel can have
+    public GameObject carCamera; // controls the camera attached to the car
+    public bool isCarActive; // determines whether or not player is inside car
 
 
 
 
     private void Start()
     {
-        isCarActive = false;    
+        isCarActive = false;
     }
 
     public void FixedUpdate()
-{
+    {
         if (isCarActive)
         {
             float motor = maxMotorTorque * Input.GetAxis("Vertical");
@@ -40,11 +40,21 @@ public bool isCarActive; // determines whether or not player is inside car
                 }
             }
         }
-}
+    }
 
     public void Update()
     {
         CarActivityCheck();
+
+        if (isCarActive)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // var player = FindObjectOfType<ThirdPersonCharacterControl>();
+                // player.transform.position = transform.position;
+                GameManager.instance.ExitCar();
+            }
+        }
     }
 
     public void CarActivityCheck()
@@ -52,14 +62,41 @@ public bool isCarActive; // determines whether or not player is inside car
         if (!isCarActive)
         {
             carCamera.SetActive(false);
-        } else
+        }
+        else
         {
             carCamera.SetActive(true);
         }
     }
 
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //EnterCar(carToEnter);
+            Debug.Log("Player Within Collider");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Enter Car");
+
+                if (!isCarActive)
+                {
+                    Debug.Log("Car is not active");
+                    GameManager.instance.EnterCar();
+                }
+                //else
+                //{
+                //    GameManager.instance.ExitCar();
+                //  }
+
+                //gameObject.SetActive(false);
+                //EnterCar(other.gameObject.GetComponent<SimpleCarController>());
+            }
+        }
+    }
+
 }
-    
+
 [System.Serializable]
 public class AxleInfo
 {

@@ -10,7 +10,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
 
     public Transform Obstruction;
     float zoomSpeed = 2f;
-    
+
     void Start()
     {
         Obstruction = Target;
@@ -23,7 +23,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
         CamControl();
         ViewObstructed();
     }
-    
+
 
     void CamControl()
     {
@@ -43,7 +43,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
             Player.rotation = Quaternion.Euler(0, mouseX, 0);
         }
     }
-    
+
 
     void ViewObstructed()
     {
@@ -55,8 +55,8 @@ public class ThirdPersonCameraControl : MonoBehaviour
             {
                 Obstruction = hit.transform;
                 Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-                
-                if(Vector3.Distance(Obstruction.position, transform.position) >= 3f && Vector3.Distance(transform.position, Target.position) >= 1.5f)
+
+                if (Vector3.Distance(Obstruction.position, transform.position) >= 3f && Vector3.Distance(transform.position, Target.position) >= 1.5f)
                     transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
             }
             else
