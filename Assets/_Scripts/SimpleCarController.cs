@@ -10,6 +10,7 @@ public class SimpleCarController : MonoBehaviour
     public float maxSteeringAngle; // maximum steer angle the wheel can have
     public GameObject carCamera; // controls the camera attached to the car
     public bool isCarActive; // determines whether or not player is inside car
+    private SimpleCarController activePlayer;
 
 
 
@@ -17,6 +18,7 @@ public class SimpleCarController : MonoBehaviour
     private void Start()
     {
         isCarActive = false;
+        activePlayer = FindObjectOfType<SimpleCarController>();
     }
 
     public void FixedUpdate()
@@ -52,6 +54,7 @@ public class SimpleCarController : MonoBehaviour
             {
                 // var player = FindObjectOfType<ThirdPersonCharacterControl>();
                 // player.transform.position = transform.position;
+                activePlayer.transform.position = new Vector3(transform.position.x, 0, transform.position.y + 10);
                 GameManager.instance.ExitCar();
             }
         }
@@ -81,6 +84,7 @@ public class SimpleCarController : MonoBehaviour
 
                 if (!isCarActive)
                 {
+                    GameManager.instance.Vehicle = this.gameObject;
                     Debug.Log("Car is not active");
                     GameManager.instance.EnterCar();
                 }
