@@ -199,7 +199,7 @@ BoxCollider:
   m_GameObject: {fileID: 240981395}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -338,7 +338,7 @@ PrefabInstance:
     - target: {fileID: 6944500843672113521, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1389161158, guid: 9cf171e1105749246b3fb326680ec7e1, type: 3}
       propertyPath: maxMotorTorque
@@ -378,9 +378,9 @@ BoxCollider:
   m_GameObject: {fileID: 257884667}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.99999994, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &257884669
 MeshRenderer:
@@ -436,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257884667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.79, y: 1.95, z: -20.24}
+  m_LocalPosition: {x: -22.79, y: 1.95, z: -19.77}
   m_LocalScale: {x: -9.253776, y: 13.106915, z: 5.1197}
   m_Children: []
   m_Father: {fileID: 0}
@@ -569,7 +569,7 @@ BoxCollider:
   m_GameObject: {fileID: 645875110}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -832,9 +832,9 @@ BoxCollider:
   m_GameObject: {fileID: 1414503316}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.99999994, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1414503318
 MeshRenderer:
@@ -890,7 +890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414503316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.7, y: 1.95, z: -12.9}
+  m_LocalPosition: {x: -46.7, y: 1.95, z: -12.6}
   m_LocalScale: {x: -9.253776, y: 13.106915, z: 5.1197}
   m_Children: []
   m_Father: {fileID: 0}
@@ -924,9 +924,9 @@ BoxCollider:
   m_GameObject: {fileID: 1419762641}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.99999994, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1419762643
 MeshRenderer:
@@ -1155,7 +1155,7 @@ PrefabInstance:
     - target: {fileID: 6944500843672113521, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1389161158, guid: 9cf171e1105749246b3fb326680ec7e1, type: 3}
       propertyPath: maxMotorTorque
@@ -1206,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 6944500843672113527, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.16
+      value: -14.59
       objectReference: {fileID: 0}
     - target: {fileID: 6944500843672113527, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
@@ -1266,7 +1266,7 @@ PrefabInstance:
     - target: {fileID: 6944500843672113521, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1389161158, guid: 9cf171e1105749246b3fb326680ec7e1, type: 3}
       propertyPath: maxMotorTorque
@@ -1276,6 +1276,11 @@ PrefabInstance:
       propertyPath: centerOfMass
       value: 
       objectReference: {fileID: 1088553111}
+    - target: {fileID: 6944500843055400592, guid: 9cf171e1105749246b3fb326680ec7e1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5cb5820402046894ba80fb1412603a74, type: 2}
     - target: {fileID: 6944500842864033383, guid: 9cf171e1105749246b3fb326680ec7e1,
         type: 3}
       propertyPath: m_Mass
