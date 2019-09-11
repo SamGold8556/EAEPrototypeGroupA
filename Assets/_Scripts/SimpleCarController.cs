@@ -13,6 +13,7 @@ public class SimpleCarController : MonoBehaviour
     private SimpleCarController activePlayer;
     public GameObject centerOfMass;
 
+    private PlayerControl player;
 
 
     private void Start()
@@ -54,16 +55,29 @@ public class SimpleCarController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                PlayerExit();
                 // var player = FindObjectOfType<ThirdPersonCharacterControl>();
                 // player.transform.position = transform.position;
                 //activePlayer.transform.position = new Vector3(transform.position.x, 0, transform.position.y + 10);
-                GameManager.instance.ExitCar();
+                
             }
         }
     }
 
+    public void PlayerEnter(PlayerControl player)
+    {
+        this.player = player;
+    }
+
+    void PlayerExit()
+    {
+        player.ExitCar();
+        this.player = null;
+    }
+
     public void CarActivityCheck()
     {
+        /*
         if (!isCarActive)
         {
             carCamera.SetActive(false);
@@ -72,6 +86,7 @@ public class SimpleCarController : MonoBehaviour
         {
             carCamera.SetActive(true);
         }
+        */
     }
 
     public void OnTriggerStay(Collider other)
@@ -80,24 +95,6 @@ public class SimpleCarController : MonoBehaviour
         {
             //EnterCar(carToEnter);
             Debug.Log("Player Within Collider");
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Enter Car");
-
-                if (!isCarActive)
-                {
-                    GameManager.instance.Vehicle = this.gameObject;
-                    Debug.Log("Car is not active");
-                    GameManager.instance.EnterCar();
-                }
-                //else
-                //{
-                //    GameManager.instance.ExitCar();
-                //  }
-
-                //gameObject.SetActive(false);
-                //EnterCar(other.gameObject.GetComponent<SimpleCarController>());
-            }
         }
     }
 
