@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 472}
   m_MaxSize: {x: 14002, y: 14022}
   vertical: 0
-  controlID: 253
+  controlID: 11484
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 472}
   m_MaxSize: {x: 10000, y: 14022}
   vertical: 1
-  controlID: 254
+  controlID: 11485
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 222}
   m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
-  controlID: 232
+  controlID: 11486
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -381,10 +381,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 418}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 78fbffff
+      m_ExpandedIDs: 78fbffffde2e0000182f00002630000078300000903000009430000098300000ae300000183100004431000064310000b2310000ba310000e63100000e32000052320000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -83.95587, y: 16.978493, z: 104.28945}
+    m_Target: {x: -87.65878, y: 58.68762, z: 109.06452}
     speed: 2
-    m_Value: {x: -83.95587, y: 16.978493, z: 104.28945}
+    m_Value: {x: -87.65878, y: 58.68762, z: 109.06452}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -475,13 +475,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.056784913, y: 0.1743428, z: -0.0096245445, w: -0.9832827}
+    m_Target: {x: 0.2410331, y: -0.7010319, z: 0.2767018, w: 0.61202246}
     speed: 2
-    m_Value: {x: -0.0582435, y: 0.17427957, z: -0.009883578, w: -0.9829225}
+    m_Value: {x: 0.24905643, y: -0.69418144, z: 0.28246605, w: 0.61342955}
   m_Size:
-    m_Target: 216.33884
+    m_Target: 71.62231
     speed: 2
-    m_Value: 207.02281
+    m_Value: 74.99718
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -572,19 +572,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scenes
+    - Assets/_Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/_Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Owner\Documents\EAEPrototypeGroupA
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1c2d0000
-    m_LastClickedID: 11548
+    m_SelectedIDs: 202d0000
+    m_LastClickedID: 11552
     m_ExpandedIDs: 00000000cc2b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
