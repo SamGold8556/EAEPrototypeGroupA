@@ -59,9 +59,9 @@ public class PlayerControl : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
         SimpleCarController otherCar;
-        if (other.GetComponent<SimpleCarController>() != null)
+        if (other.GetComponentInChildren<SimpleCarController>() != null)
         {
-            otherCar = other.GetComponent<SimpleCarController>();
+            otherCar = other.GetComponentInChildren<SimpleCarController>();
             if (nearestCar == null ||
                     Vector3.Distance(otherCar.transform.position, transform.position) < Vector3.Distance(nearestCar.transform.position, transform.position)) {
                 nearestCar = otherCar;
