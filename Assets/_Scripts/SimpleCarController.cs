@@ -90,13 +90,22 @@ public class SimpleCarController : MonoBehaviour
         */
     }
 
+    public void OnNearest()
+    {
+        indicator.SetColor(Color.white);
+    }
+
+    public void OnNotNearest()
+    {
+        indicator.SetColor(Color.black);
+    }
+
     public void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             //EnterCar(carToEnter);
             Debug.Log("Player Within Collider");
-            indicator.SetColor(Color.white);
             other.GetComponent<PlayerControl>().PlayerByCar(this);
         }
     }
@@ -106,7 +115,6 @@ public class SimpleCarController : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player Exited Collider");
-            indicator.SetColor(Color.black);
             other.GetComponent<PlayerControl>().LeaveCar(this);
         }
     }

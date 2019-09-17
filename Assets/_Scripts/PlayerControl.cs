@@ -8,8 +8,27 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject playerCamera;
     public CharacterController charControl;
-    public SimpleCarController nearestCar;
+    public SimpleCarController nearestCar
+    {
+        get
+        {
+            return _nearestCar;
+        }
+        set
+        {
+            if (_nearestCar != null)
+            {
+                _nearestCar.OnNotNearest();
+            }
+            _nearestCar = value;
+            if (_nearestCar != null)
+            {
+                _nearestCar.OnNearest();
+            }
+        }
+    }
 
+    private SimpleCarController _nearestCar;
     private SimpleCarController activeCar;
 
     private void Update()
