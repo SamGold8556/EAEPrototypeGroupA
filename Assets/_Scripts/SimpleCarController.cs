@@ -95,6 +95,16 @@ public class SimpleCarController : MonoBehaviour
         {
             //EnterCar(carToEnter);
             Debug.Log("Player Within Collider");
+            other.GetComponent<PlayerControl>().PlayerByCar(this);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("Player Exited Collider");
+            other.GetComponent<PlayerControl>().LeaveCar(this);
         }
     }
 

@@ -41,7 +41,7 @@ public class PlayerControl : MonoBehaviour
         activeCar.isCarActive = true;
         this.activeCar = activeCar;
         gameObject.SetActive(false);
-        transform.parent = activeCar.transform; //Connect to car, allows exit at proper location.
+        transform.parent = activeCar.centerOfMass.transform; //Connect to car, allows exit at proper location.
         activeCar.PlayerEnter(this);
         Camera.main.GetComponent<SmoothCameraMove>().SwitchTarget(activeCar.carCamera.transform);
     }
@@ -54,6 +54,7 @@ public class PlayerControl : MonoBehaviour
         gameObject.SetActive(true);
         Camera.main.GetComponent<SmoothCameraMove>().SwitchTarget(playerCamera.transform);
         activeCar = null;
+        nearestCar = null;
     }
 
     public void OnTriggerStay(Collider other)
@@ -62,12 +63,35 @@ public class PlayerControl : MonoBehaviour
         if (other.GetComponentInChildren<SimpleCarController>() != null)
         {
             otherCar = other.GetComponentInChildren<SimpleCarController>();
-            if (nearestCar == null ||
-                    Vector3.Distance(otherCar.transform.position, transform.position) < Vector3.Distance(nearestCar.transform.position, transform.position)) {
-                nearestCar = otherCar;
-                Debug.Log("Near Car");
-                //EnterCar(carToEnter);
-            }
+            PlayerByCar(otherCar);
+        }
+    }
+
+    public void PlayerByCar(SimpleCarController otherCar)
+    {
+        if (nearestCar == null ||
+                Vector3.Distance(otherCar.transform.position, transform.position) < Vector3.Distance(nearestCar.transform.position, transform.position))
+        {
+            nearestCar = otherCar;
+            Debug.Log("Near Car");
+            //EnterCar(carToEnter);
+        }
+    }
+
+    public void LeaveCar(SimpleCarController otherCar)
+    {
+        if (nearestCar == otherCar)
+        {
+            nearestCar = null;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponentInChildren<SimpleCarController>() != null)
+        {
+            SimpleCarController otherCar = other.GetComponentInChildren<SimpleCarController>();
+            LeaveCar(otherCar);
         }
     }
 }
