@@ -12,6 +12,7 @@ public class SimpleCarController : MonoBehaviour
     public bool isCarActive; // determines whether or not player is inside car
     private SimpleCarController activePlayer;
     public GameObject centerOfMass;
+    public BillboardSprite indicator;
 
     private PlayerControl player;
 
@@ -95,6 +96,7 @@ public class SimpleCarController : MonoBehaviour
         {
             //EnterCar(carToEnter);
             Debug.Log("Player Within Collider");
+            indicator.SetColor(Color.white);
             other.GetComponent<PlayerControl>().PlayerByCar(this);
         }
     }
@@ -104,6 +106,7 @@ public class SimpleCarController : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player Exited Collider");
+            indicator.SetColor(Color.black);
             other.GetComponent<PlayerControl>().LeaveCar(this);
         }
     }

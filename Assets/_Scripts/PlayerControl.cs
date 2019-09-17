@@ -44,6 +44,7 @@ public class PlayerControl : MonoBehaviour
         transform.parent = activeCar.centerOfMass.transform; //Connect to car, allows exit at proper location.
         activeCar.PlayerEnter(this);
         Camera.main.GetComponent<SmoothCameraMove>().SwitchTarget(activeCar.carCamera.transform);
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Car Indicators"));
     }
 
     public void ExitCar()
@@ -55,6 +56,7 @@ public class PlayerControl : MonoBehaviour
         Camera.main.GetComponent<SmoothCameraMove>().SwitchTarget(playerCamera.transform);
         activeCar = null;
         nearestCar = null;
+        Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Car Indicators"));
     }
 
     public void OnTriggerStay(Collider other)
